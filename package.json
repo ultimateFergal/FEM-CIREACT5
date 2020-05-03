@@ -1,0 +1,23 @@
+{
+  "name": "adopt-me",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000F\u0000E\u0000M\u0000-\u0000C\u0000I\u0000R\u0000E\u0000A\u0000C\u0000T\u00005\u0000\r\u0000 \u0000",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ultimateFergal/FEM-CIREACT5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ultimateFergal/FEM-CIREACT5/issues"
+  },
+  "homepage": "https://github.com/ultimateFergal/FEM-CIREACT5#readme",
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  }
+}

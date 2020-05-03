@@ -1,4 +1,8 @@
-const Pet = ({name, animal, breed}) => { // desestructuring
+const Pet = ({
+    name,
+    animal,
+    breed
+}) => { // desestructuring
     return React.createElement("div", {}, [
         React.createElement("h1", {}, name),
         React.createElement("h2", {}, animal),
