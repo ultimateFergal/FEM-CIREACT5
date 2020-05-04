@@ -5,6 +5,7 @@
   "main": "App.js",
   "scripts": {
     "format": "prettier \"src/**/*.{js,css,html}\" --write",
+      "lint": "eslint \"src/**/*.{js, jsx}\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,8 @@
   },
   "homepage": "https://github.com/ultimateFergal/FEM-CIREACT5#readme",
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
     "prettier": "^2.0.5"
   }
 }
