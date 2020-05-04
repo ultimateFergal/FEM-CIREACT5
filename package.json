@@ -4,8 +4,9 @@
   "description": "��#\u0000 \u0000F\u0000E\u0000M\u0000-\u0000C\u0000I\u0000R\u0000E\u0000A\u0000C\u0000T\u00005\u0000\r\u0000 \u0000",
   "main": "App.js",
   "scripts": {
+    "dev": "parcel src/index.html",
     "format": "prettier \"src/**/*.{js,css,html}\" --write",
-      "lint": "eslint \"src/**/*.{js, jsx}\" --quiet",
+    "lint": "eslint \"src/**/*.{js, jsx}\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,11 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
+    "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
