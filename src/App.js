@@ -1,10 +1,11 @@
-import React from 'react';
-import { render } from 'react-dom';
-import Pet from './Pet';
+import React from "react";
+import { render } from "react-dom";
+import Pet from "./Pet";
+import SearchParams from "./SearchParams";
 
 // My code will go here for now
 const App = () => {
-  return React.createElement(
+  /*   return React.createElement(
     "div",
     {
       id: "something-important",
@@ -33,8 +34,21 @@ const App = () => {
         breed: "Dashund",
       }),
     ] // Children of the component
+  ); */
+
+  return (
+    <div>
+      <h1 id="something-important">Adopt me!</h1>
+
+      <SearchParams />
+
+      <Pet name="Lupe" animal="Dog" breed="German Shephard"></Pet>
+      <Pet name="Azrael" animal="Cat" breed=">Mixed"></Pet>
+      <Pet name="Sussie" animal="Dog" breed="Dashund"></Pet>
+    </div>
   );
 };
 
-render(React.createElement(App), document.getElementById("root"));
+render(<App />, document.getElementById("root"));
+//render(React.createElement(App), document.getElementById("root"));
 // ReactDOM.render(React.createElement(App), document.getElementById("root"));
