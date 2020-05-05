@@ -1,16 +1,26 @@
-import React, { useState } from "react";
-import { ANIMALS } from "@frontendmasters/pet";
-import useDropdown from './useDropdown'; // hook for replaceing manually created selects
-
+import React, { useState, useEffect } from "react";
+import pet, { ANIMALS } from "@frontendmasters/pet";
+import useDropdown from "./useDropdown"; // hook for replaceing manually created selects
 
 const SearchParams = () => {
   // const location = "Seattle, WA";
   const [location, setLocation] = useState("Seattle, WA");
   // const [animal, setAnimal] = useState("dog");
   // const [breed, setBreed] = useState("dog");
-  const [breeds, setBreeds] = useState([])
-  const [animal, AnimalDropdown] = useDropdown("Animal", "dog", ANIMALS)
-  const [breed, BreedDropdown] = useDropdown("Breed", "", breeds)
+  const [breeds, setBreeds] = useState([]);
+  const [animal, AnimalDropdown] = useDropdown("Animal", "dog", ANIMALS);
+  const [breed, BreedDropdown, setBreed] = useDropdown("Breed", "", breeds);
+
+  useEffect(() => {
+    // pet.breeds("dog").then(console.log, console.error);
+    setBreeds([]);
+    setBreed("");// If i change the type of animal, breed must reset
+
+    pet.breeds(animal).then(({ breeds: apiBreeds }) => {
+        const breedStrings = apiBreeds.map(({ name }) => name); // desestructured
+        setBreeds(breedStrings);
+    }, console.error);
+  }, [animal, setBreed, setBreeds]); // only run when these things change and not in every render, for making it run once []
 
   return (
     <div className="search-params">
@@ -26,7 +36,7 @@ const SearchParams = () => {
         </label>
         <AnimalDropdown /> {/* hook */}
         <BreedDropdown /> {/* hook */}
-{/* 
+        {/* 
         <label htmlFor="animal">
           Animal
           <select

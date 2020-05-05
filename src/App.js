@@ -37,15 +37,17 @@ const App = () => {
   ); */
 
   return (
-    <div>
-      <h1 id="something-important">Adopt me!</h1>
+    <React.StrictMode>{/* gives warnings about things that will be deprecated or are too old in react */}
+      <div>
+        <h1 id="something-important">Adopt me!</h1>
 
-      <SearchParams />
+        <SearchParams />
 
-      <Pet name="Lupe" animal="Dog" breed="German Shephard"></Pet>
-      <Pet name="Azrael" animal="Cat" breed=">Mixed"></Pet>
-      <Pet name="Sussie" animal="Dog" breed="Dashund"></Pet>
-    </div>
+        <Pet name="Lupe" animal="Dog" breed="German Shephard"></Pet>
+        <Pet name="Azrael" animal="Cat" breed=">Mixed"></Pet>
+        <Pet name="Sussie" animal="Dog" breed="Dashund"></Pet>
+      </div>
+    </React.StrictMode>
   );
 };
 
