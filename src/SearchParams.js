@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { ANIMALS } from "@frontendmasters/pet";
+import useDropdown from './useDropdown'; // hook for replaceing manually created selects
+
 
 const SearchParams = () => {
   // const location = "Seattle, WA";
   const [location, setLocation] = useState("Seattle, WA");
-  const [animal, setAnimal] = useState("dog");
-  const [breed, setBreed] = useState("dog");
+  // const [animal, setAnimal] = useState("dog");
+  // const [breed, setBreed] = useState("dog");
   const [breeds, setBreeds] = useState([])
+  const [animal, AnimalDropdown] = useDropdown("Animal", "dog", ANIMALS)
+  const [breed, BreedDropdown] = useDropdown("Breed", "", breeds)
 
   return (
     <div className="search-params">
@@ -20,6 +24,9 @@ const SearchParams = () => {
             onChange={(e) => setLocation(e.target.value)}
           />
         </label>
+        <AnimalDropdown /> {/* hook */}
+        <BreedDropdown /> {/* hook */}
+{/* 
         <label htmlFor="animal">
           Animal
           <select
@@ -49,6 +56,7 @@ const SearchParams = () => {
               {breeds.map(breedString => <option key={breedString}>{breedString}</option>)}
           </select>
         </label>
+         */}
         <button>Submit</button>
       </form>
     </div>
