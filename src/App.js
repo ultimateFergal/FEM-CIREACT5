@@ -43,9 +43,9 @@ const App = () => {
 
         <SearchParams />
 
-        <Pet name="Lupe" animal="Dog" breed="German Shephard"></Pet>
+{/*         <Pet name="Lupe" animal="Dog" breed="German Shephard"></Pet>
         <Pet name="Azrael" animal="Cat" breed=">Mixed"></Pet>
-        <Pet name="Sussie" animal="Dog" breed="Dashund"></Pet>
+        <Pet name="Sussie" animal="Dog" breed="Dashund"></Pet> */}
       </div>
     </React.StrictMode>
   );
