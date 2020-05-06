@@ -14,33 +14,34 @@ const SearchParams = () => {
   const [pets, setPets] = useState([]);
 
   async function requestPets() {
-    const  { animals } = await pet.animals({
+    const { animals } = await pet.animals({
       location,
       breed,
-      type: animal
-    })
+      type: animal,
+    });
 
-    console.log(animals, 'animals fdo')
     setPets(animals || []);
   }
 
   useEffect(() => {
     // pet.breeds("dog").then(console.log, console.error);
     setBreeds([]);
-    setBreed("");// If i change the type of animal, breed must reset
+    setBreed(""); // If i change the type of animal, breed must reset
 
     pet.breeds(animal).then(({ breeds: apiBreeds }) => {
-        const breedStrings = apiBreeds.map(({ name }) => name); // desestructured
-        setBreeds(breedStrings);
+      const breedStrings = apiBreeds.map(({ name }) => name); // desestructured
+      setBreeds(breedStrings);
     }, console.error);
   }, [animal, setBreed, setBreeds]); // only run when these things change and not in every render, for making it run once []
 
   return (
     <div className="search-params">
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        requestPets();
-      }}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          requestPets();
+        }}
+      >
         <label htmlFor="location">
           Location
           <input
